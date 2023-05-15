@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D11E2492A11D69200EEE077 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D11E2482A11D69200EEE077 /* main.cpp */; };
+		5D11E2512A11D6B300EEE077 /* temphonors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D11E2502A11D6B300EEE077 /* temphonors.cpp */; };
+		5D11E2542A11D6D800EEE077 /* tempzylabs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D11E2532A11D6D800EEE077 /* tempzylabs.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,8 @@
 
 /* Begin PBXFileReference section */
 		5D11E2452A11D69200EEE077 /* DeAnza2023 CIS22C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "DeAnza2023 CIS22C"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D11E2482A11D69200EEE077 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5D11E2502A11D6B300EEE077 /* temphonors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = temphonors.cpp; sourceTree = "<group>"; };
+		5D11E2532A11D6D800EEE077 /* tempzylabs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tempzylabs.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +43,8 @@
 		5D11E23C2A11D69200EEE077 = {
 			isa = PBXGroup;
 			children = (
-				5D11E2472A11D69200EEE077 /* DeAnza2023 CIS22C */,
+				5D11E2522A11D6C300EEE077 /* [CIS22C] ZyLabs */,
+				5D11E24F2A11D69A00EEE077 /* [CIS22C] Honors */,
 				5D11E2462A11D69200EEE077 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +57,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5D11E2472A11D69200EEE077 /* DeAnza2023 CIS22C */ = {
+		5D11E24F2A11D69A00EEE077 /* [CIS22C] Honors */ = {
 			isa = PBXGroup;
 			children = (
-				5D11E2482A11D69200EEE077 /* main.cpp */,
+				5D11E2502A11D6B300EEE077 /* temphonors.cpp */,
 			);
-			path = "DeAnza2023 CIS22C";
+			path = "[CIS22C] Honors";
+			sourceTree = "<group>";
+		};
+		5D11E2522A11D6C300EEE077 /* [CIS22C] ZyLabs */ = {
+			isa = PBXGroup;
+			children = (
+				5D11E2532A11D6D800EEE077 /* tempzylabs.cpp */,
+			);
+			path = "[CIS22C] ZyLabs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +130,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D11E2492A11D69200EEE077 /* main.cpp in Sources */,
+				5D11E2542A11D6D800EEE077 /* tempzylabs.cpp in Sources */,
+				5D11E2512A11D6B300EEE077 /* temphonors.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
