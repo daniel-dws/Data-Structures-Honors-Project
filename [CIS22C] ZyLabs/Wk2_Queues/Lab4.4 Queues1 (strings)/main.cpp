@@ -2,8 +2,8 @@
 CIS 22C
 Project: Queue of strings
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: xCode
 *~*/
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@ using namespace std;
 class Queue_str
 {
 private:
-   // Structure for the queue nodes
+   // Structure for the stack nodes
    struct QueueNode {
        string value;        // Value in the node
        QueueNode *next;     // Pointer to next node
@@ -27,12 +27,12 @@ public:
    //~Queue_str();                                    // Destructor
 
    // Queue operations
-   bool isEmpty() {/* Write your code here */}
+   bool isEmpty() {return length == 0;}
    bool push(string);
    // string pop();
-   string peek() {/* Write your code here */ }
-   string peekRear() {/* Write your code here */ }
-   int getLength() {/* Write your code here */ }
+   string peek() {return front->value;}
+   string peekRear() {return rear->value;}
+   int getLength() {return length;}
 };
 
 /**~*~*
@@ -61,12 +61,24 @@ bool  Queue_str::push(string item)
    return true;
 }
 
-
-
 int main() {
 
      Queue_str que;
      string item;
+     
+     while (getline(cin, item) && item != "#") { //push item while item != #
+        que.push(item); //push item
+     }
+     
+     if (que.getLength() == 0) { //if item == 0, cout error
+        cout << que.getLength() << endl;
+        cout << "Empty Queue!" << endl;
+     }
+     else { //else access functions
+        cout << que.getLength() << endl;
+        cout << que.peek() << endl;
+        cout << que.peekRear() << endl;
+     }
 
      return 0;
 }

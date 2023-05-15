@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D98A5062A11D85A000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5052A11D85A000E37EC /* main.cpp */; };
-		5D98A5092A11D885000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5082A11D885000E37EC /* main.cpp */; };
-		5D98A50C2A11D8A2000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A50B2A11D8A2000E37EC /* main.cpp */; };
-		5D98A5102A11D8D0000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A50E2A11D8CF000E37EC /* main.cpp */; };
+		5D98A5112A11E276000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5052A11D85A000E37EC /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,10 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D98A5092A11D885000E37EC /* main.cpp in Sources */,
-				5D98A5062A11D85A000E37EC /* main.cpp in Sources */,
-				5D98A5102A11D8D0000E37EC /* main.cpp in Sources */,
-				5D98A50C2A11D8A2000E37EC /* main.cpp in Sources */,
+				5D98A5112A11E276000E37EC /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
