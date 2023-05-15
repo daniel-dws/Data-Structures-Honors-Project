@@ -2,8 +2,8 @@
 CIS 22C
 Project: Queue of strings (pop)
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: ZyBooks
 *~*/
 #include <iostream>
 #include <string>
@@ -27,10 +27,10 @@ public:
    //~Queue_str();                                    // Destructor
 
    // Queue operations
-   bool isEmpty() {/* Write your code here */}
+   bool isEmpty() {return length == 0;}
    bool push(string);
    string pop();
-   //string peek(); 
+   //string peek();
    //string peekRear();
    //int getLength();
 };
@@ -61,7 +61,6 @@ bool  Queue_str::push(string item)
    return true;
 }
 
-
 /**~*~*~*
   Member function dequeue deletes the value at the front
   of the queue and returns it.
@@ -70,7 +69,18 @@ bool  Queue_str::push(string item)
 string Queue_str::pop()
 {
    /* Write your code here */
-   return item;
+   QueueNode *pDel;
+   
+   string item = front->value; //temp value to return
+   pDel = front;
+   
+   if (length == 1) //check if length is != 0
+      rear = nullptr;
+   front = front->next; //shift node
+   
+   length--; //lower value of length
+   delete pDel;
+   return item; //return final value
 }
 
 int main() {
@@ -79,6 +89,19 @@ int main() {
      string item;
     
      /* Write your code here */
+     while (getline(cin, item) && item != "#") { //while item != 0
+        que.push(item); //push
+     }
+     
+     if (!que.isEmpty()) { //check if queue is not empty
+        while (!que.isEmpty()) {
+           cout << que.pop() << endl; //pop
+        }
+     }
+     
+     else {
+        cout << "Empty Queue!" << endl;
+     }
        
      return 0;
 }
