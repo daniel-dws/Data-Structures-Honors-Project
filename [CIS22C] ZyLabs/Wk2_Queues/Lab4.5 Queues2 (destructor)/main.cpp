@@ -2,8 +2,8 @@
 CIS 22C
 Project: Queue of strings (Destructor)
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: xCode
 *~*/
 #include <iostream>
 #include <string>
@@ -61,16 +61,22 @@ bool  Queue_str::push(string item)
    return true;
 }
 
-
 /**~*~*~*
    Destructor
 *~**/
 Queue_str::~Queue_str()
 {
-   cout << front->value << " - deleted!" << endl;
-   delete front;
-   cout << rear->value << " - deleted!" << endl;
-   delete rear;
+   QueueNode *tempNode;
+   
+   while (front != nullptr) { //iterate while front is not null
+      tempNode = front;
+      front = front->next; //shift front
+      cout << tempNode->value << " - deleted!" << endl; //show node deletions
+      delete tempNode;
+   }
+      
+   //cout << rear->value << " - deleted!" << endl;
+  // delete rear;
     
    cout << "Empty queue!" << endl;
 }
@@ -81,6 +87,10 @@ int main() {
    string item;
 
    /* Write your code here */
+   while (getline(cin, item) && item != "#") { //push items while item != #
+        que.push(item); //push
+   }
+     
      
    return 0;
 }
