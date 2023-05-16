@@ -1,7 +1,7 @@
 // Specification file for the Student class
-// Written by: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: ZyBooks
 
 #ifndef STUDENT_H
 #define STUDENT_H
@@ -18,13 +18,21 @@ class Student
 {
 private:
 /* Write your code here: gpa - a double, name - a string */
-
+   double gpa;
+   string name;
     
 public:
     /* Write your code here: default and overloaded constructors  */
+    Student() {name = ""; gpa = -1;} //Constructor
+    Student(double g, string n)  {name = n; gpa = g;} //Overloaded Constructor
+    
     
     // Setters and getters
     /* Write your code here: a setter and a getter for each data member of the class  */
+    void setName(string n) {name = n;}
+    void setGpa(double g) {gpa = g;}
+    string getName() const {return name;}
+    double getGpa() const {return gpa;}
     
 };
 #endif

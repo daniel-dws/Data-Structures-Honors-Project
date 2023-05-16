@@ -1,7 +1,7 @@
 // Implementation file for the Student List class
-// Written by: A. Student
-// Reviewed, Debugged, & Modified by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed, Debugged, & Modified by: Daniel Wong
+// IDE: ZyBooks
 
 #include <iostream>         // For cout  and NULL
 #include "StudentList.h"
@@ -18,6 +18,12 @@ using namespace std;
 StudentList::StudentList()
 {
    /* Write your code here */
+   head = new ListNode;
+   
+   head->stu.setGpa(-1);
+   head->stu.setName("");
+   head->next = nullptr;
+   count = 0;
 }
 
 // **************************************************
@@ -36,7 +42,7 @@ void StudentList::displayList() const
     while (pCur)
     {
         // Display the value in this node.
-        cout << pCur->stu.gpa << " " << pCur->stu.name << endl;
+        cout << pCur->stu.getGpa() << " " << pCur->stu.getName() << endl;
         
         // Move to the next node.
         pCur = pCur->next;
@@ -63,7 +69,7 @@ void StudentList::insertNode(Student dataIn)
     pCur = head->next;
     
     // Find location: skip all nodes whose name is less than dataIn's name
-    while (pCur != NULL && pCur->stu.name< dataIn.name)
+    while (pCur != NULL && pCur->stu.getName() < dataIn.getName())
     {
         pPre = pCur;
         pCur = pCur->next;
@@ -93,14 +99,14 @@ bool StudentList::deleteNode(string target)
     pCur = head->next;
     
     // Find node containing the target: Skip all nodes whose name is less than the target
-    while (pCur != NULL && pCur->stu.name < target)
+    while (pCur != NULL && pCur->stu.getName() < target)
     {
         pPre = pCur;
         pCur = pCur->next;
     }
     
     // If found, delete the node
-    if (pCur != NULL && pCur->stu.name == target)
+    if (pCur != NULL && pCur->stu.getName() == target)
     {
         pPre->next = pCur->next;
         delete pCur;
@@ -112,8 +118,8 @@ bool StudentList::deleteNode(string target)
 }
 
 // **************************************************
-// Destructor                                       
-// This function deletes every node in the list.    
+// Destructor
+// This function deletes every node in the list.
 // **************************************************
 StudentList::~StudentList()
 {

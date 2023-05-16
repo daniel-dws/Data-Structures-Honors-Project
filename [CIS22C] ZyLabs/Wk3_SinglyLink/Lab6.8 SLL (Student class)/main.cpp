@@ -1,12 +1,12 @@
-/* 
+/*
  CIS 22C  // Student is a class
  
  This program builds and displays a sorted list
  The list is sorted in ascending order by name
  
- Written by: A. Student
- Reviewed & Modified by: <Write your name here>
- IDE: 
+ Written by: Daniel Wong
+ Reviewed & Modified by: Daniel Wong
+ IDE: ZyBooks
  
  */
 #include <iostream>
@@ -22,14 +22,14 @@ int main()
     // Define a StudentList object
     StudentList list;
     
-    buildList(list);       
+    buildList(list);
     list.displayList();
     
     // Insert new data
     double gpa;
     string name;
-    cin >> gpa;   
-    cin >> name;  
+    cin >> gpa;
+    cin >> name;
     Student newStu(gpa, name);
     list.insertNode(newStu);
     list.displayList();
