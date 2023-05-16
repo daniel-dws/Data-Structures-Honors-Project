@@ -6,13 +6,6 @@
 	objectVersion = 55;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		5D0C3AF82A13FC9900A586B8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5342A11FA3B000E37EC /* main.cpp */; };
-		5D0C3AF92A13FC9900A586B8 /* Student.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5372A11FA3B000E37EC /* Student.h */; };
-		5D0C3AFA2A13FC9900A586B8 /* StudentList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5352A11FA3B000E37EC /* StudentList.cpp */; };
-		5D0C3AFB2A13FC9900A586B8 /* StudentList.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5362A11FA3B000E37EC /* StudentList.h */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		5D98A51B2A11F993000E37EC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -194,10 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0C3AF82A13FC9900A586B8 /* main.cpp in Sources */,
-				5D0C3AF92A13FC9900A586B8 /* Student.h in Sources */,
-				5D0C3AFA2A13FC9900A586B8 /* StudentList.cpp in Sources */,
-				5D0C3AFB2A13FC9900A586B8 /* StudentList.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
