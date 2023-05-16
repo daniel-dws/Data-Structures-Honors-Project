@@ -1,6 +1,6 @@
 // Specification file for the Student List class
-// Modified by:
-// IDE:
+// Modified by: Daniel Wong
+// IDE: ZyBooks
 
 #ifndef STUDENTLIST_H
 #define STUDENTLIST_H
@@ -35,6 +35,9 @@ public:
     void displayList() const;
     
    /* Write your code here */
+   //Overloaded Constructors
+    void displayList(double) const;
+    void displayList(double, double) const;
    
 };
 #endif

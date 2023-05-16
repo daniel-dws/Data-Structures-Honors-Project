@@ -4,15 +4,15 @@
  This program builds and displays a sorted list.
  The list is sorted in ascending order by name.
  
- Requirement 
+ Requirement
  Overload the displayList() function as shown below:
  list.displayList();    // displays the entire list
  list.displayList(3.0); // displays all students with the gpa below or equal to 3.0.
- list.displayList(3.1, 3.9); // displays all students with the gpa within this range, inclusive. 
+ list.displayList(3.1, 3.9); // displays all students with the gpa within this range, inclusive.
  
- Written by: A. Student
- Reviewed by: <Write your name here>
- IDE:
+ Written by: Daniel Wong
+ Reviewed by: Daniel Wong
+ IDE: ZyBooks
  
  */
 #include <iostream>
@@ -32,7 +32,7 @@ int main()
     list.displayList();
     double gpa;
     cout << "Enter a gpa: ";
-    cint >> gpa;
+    cin >> gpa;
     list.displayList(gpa);
     double from, to;
     cout << "Enter a gpa range: ";

@@ -1,6 +1,6 @@
 // Implementation file for the Student List class
-// Reviewed & Modified by: <Write your name here>
-// IDE:
+// Reviewed & Modified by: Daniel Wong
+// IDE: ZyBooks
 
 #include <iostream>         // For cout  and NULL
 #include "StudentList.h"
@@ -27,7 +27,7 @@ StudentList::StudentList()
 // **************************************************
 // displayList shows the value
 // stored in each node of the linked list
-// pointed to by head.                              
+// pointed to by head.
 // **************************************************
 
 void StudentList::displayList() const
@@ -53,20 +53,64 @@ void StudentList::displayList() const
 
 // **************************************************
 // the first overloaded displayList: ...
-// 
-//                               
+//
+//
 // **************************************************
 /* Write your code here, including comment above */
+void StudentList::displayList(double gpa) const
+{
+    ListNode *pCur;  // To move through the list
 
+    // Position pCur: skip the head of the list.
+    pCur = head->next;
+
+    // While pCur points to a node, traverse the list.
+    cout << endl;
+    while (pCur != nullptr)
+    {
+       if (pCur->stu.gpa <= gpa) {
+           // Display the value in this node.
+           cout << pCur->stu.gpa << " " << pCur->stu.name << endl;
+       }
+
+        // Move to the next node.
+        pCur = pCur->next;
+    }
+    cout << endl;
+}
 
 
 // **************************************************
 // the second overloaded displayList: ...
-// 
-//                               
+//
+//
 // **************************************************
 /* Write your code here, including comment above */
+void StudentList::displayList(double from, double to) const
+{
+    ListNode *pCur;  // To move through the list
 
+    // Position pCur: skip the head of the list.
+    pCur = head->next;
+
+    // While pCur points to a node, traverse the list.
+    cout << endl;
+    while (pCur != nullptr)
+    {
+       if (pCur->stu.gpa >= from && pCur->stu.gpa <= to) {
+           // Display the value in this node.
+           cout << pCur->stu.gpa << " " << pCur->stu.name << endl;
+       }
+        
+       else if (pCur->stu.gpa >= to && pCur->stu.gpa <= from) {
+           cout << pCur->stu.gpa << " " << pCur->stu.name << endl;
+       }
+          
+        // Move to the next node.
+        pCur = pCur->next;
+    }
+    cout << endl;
+}
 
 
 // **************************************************
@@ -103,11 +147,11 @@ void StudentList::insertNode(Student dataIn)
 }
 
 //**************************************************
-// Destructor                                       
-// This function deletes every node in the list.    
+// Destructor
+// This function deletes every node in the list.
 //**************************************************
 StudentList::~StudentList()
 {
-   // this function definition is not required 
+   // this function definition is not required
 }
 
