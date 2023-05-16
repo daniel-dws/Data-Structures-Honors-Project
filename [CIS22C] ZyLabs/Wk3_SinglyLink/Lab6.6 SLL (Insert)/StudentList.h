@@ -1,7 +1,7 @@
 // Specification file for the StudentList class
-// Written by: A. Student
-// Reviewed by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed by: Daniel Wong
+// IDE: ZyBooks
 
 #ifndef STUDENTLIST_H
 #define STUDENTLIST_H

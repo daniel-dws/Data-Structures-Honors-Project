@@ -1,7 +1,7 @@
 // Implementation file for the Student List class
-// Written by: A. Student
-// Reviewed, Debugged, & Modified by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed, Debugged, & Modified by: Daniel Wong
+// IDE: ZyBooks
 
 #include <iostream>         // For cout  and NULL
 #include "StudentList.h"
@@ -28,7 +28,7 @@ StudentList::StudentList()
 // **************************************************
 // displayList shows the value
 // stored in each node of the linked list
-// pointed to by head.                              
+// pointed to by head.
 // **************************************************
 
 void StudentList::displayList() const
@@ -69,7 +69,7 @@ void StudentList::insertNode(Student dataIn)
     pCur = head->next;
    
     // Find location: skip all nodes whose gpa is less than dataIn's gpa
-    while (pCur != NULL && pCur->stu.name < dataIn.name)
+    while (pCur != NULL && pCur->stu.gpa > dataIn.gpa)
     {
         pPre = pCur;
         pCur = pCur->next;
@@ -84,8 +84,8 @@ void StudentList::insertNode(Student dataIn)
 }
 
 // **************************************************
-// Destructor                                       
-// This function deletes every node in the list.    
+// Destructor
+// This function deletes every node in the list.
 // **************************************************
 StudentList::~StudentList()
 {

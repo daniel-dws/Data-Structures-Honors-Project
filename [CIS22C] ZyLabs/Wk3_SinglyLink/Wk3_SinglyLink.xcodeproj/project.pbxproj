@@ -6,6 +6,12 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5D98A54C2A11FB31000E37EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5282A11F9D5000E37EC /* main.cpp */; };
+		5D98A54D2A11FB31000E37EC /* StudentList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A52A2A11F9D5000E37EC /* StudentList.cpp */; };
+		5D98A54E2A11FB31000E37EC /* StudentList.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D98A5292A11F9D5000E37EC /* StudentList.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		5D98A51B2A11F993000E37EC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -187,6 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D98A54C2A11FB31000E37EC /* main.cpp in Sources */,
+				5D98A54D2A11FB31000E37EC /* StudentList.cpp in Sources */,
+				5D98A54E2A11FB31000E37EC /* StudentList.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

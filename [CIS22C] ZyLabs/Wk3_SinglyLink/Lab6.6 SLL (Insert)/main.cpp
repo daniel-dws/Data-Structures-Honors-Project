@@ -7,9 +7,9 @@
  Requirement:
  Change the insertNode() function to sort the list in descending order by gpa.
  
- Written by: A. Student
- Reviewed & Modified by: <Write your name here>
- IDE:
+ Written by: Daniel Wong
+ Reviewed & Modified by: Daniel Wong
+ IDE: ZyBooks
  
  */
 #include <iostream>
@@ -24,7 +24,7 @@ int main()
     // Define a StudentList object
     StudentList list;
     
-    buildList(list);       
+    buildList(list);
     list.displayList();
 
     return 0;
