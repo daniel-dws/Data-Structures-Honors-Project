@@ -1,3 +1,7 @@
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: Xcode
+
 // Implementation file for the BinaryTree class
 #include <iostream>  // For cout and NULL
 
@@ -22,24 +26,64 @@ BinaryTree::BinaryTree()
 *~**/
 
 /* Write your code here */
+void BinaryTree::postOrder(void visit(const Data &)) const
+{
+    _postOrder(root, visit);
+}
 
 /**~*~*
    Postorder Traversal of the Binary Tree:
    Left-Right-Root
 *~**/
 /* Write your code here */
+void BinaryTree::_postOrder(Node *root, void visit(const Data &)) const
+{
+    if (root)
+    {
+        _postOrder(root->left, visit);
+        //cout << root->data.num << " ";
+        // cout has been replaced with a call for visit
+        // What is visit?
+        // visit is a generic name for a display function
+        // in main(), when inOrder is called, it is decided what function address to assign to visit
+        // here, you just use visit the way you would use/call a function
+        _postOrder(root->right, visit);
+        visit(root->data);
+        // ------------------^^^^^^ visit as an argument
+    }
+}
 
 /**~*~*
    This function calls a recursive function to traverse the
    tree in preorder
 *~**/
 /* Write your code here */
+void BinaryTree::preOrder(void visit(const Data &)) const
+{
+    _preOrder(root, visit);
+}
 
 /**~*~*
-   Postorder Traversal of the Binary Tree:
+   Preorder Traversal of the Binary Tree:
    Left-Right-Root
 *~**/
 /* Write your code here */
+void BinaryTree::_preOrder(Node *root, void visit(const Data &)) const
+{
+    if (root)
+    {
+        visit(root->data);
+        _preOrder(root->left, visit);
+        //cout << root->data.num << " ";
+        // cout has been replaced with a call for visit
+        // What is visit?
+        // visit is a generic name for a display function
+        // in main(), when inOrder is called, it is decided what function address to assign to visit
+        // here, you just use visit the way you would use/call a function
+        _preOrder(root->right, visit);
+        // ------------------^^^^^^ visit as an argument
+    }
+}
 
 
 

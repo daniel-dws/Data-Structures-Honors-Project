@@ -1,3 +1,7 @@
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: Xcode
+
 // Specification file for the BinaryTree class
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
@@ -32,11 +36,15 @@ public:
    void insert(Data dataIn);
    void inOrder(void visit(const Data &)) const;
    /* Write your code here */
+   void preOrder(void visit(const Data &)) const;
+   void postOrder(void visit(const Data &)) const;
 
 
 private:
     void _inOrder(Node *root, void visit(const Data &)) const;
     /* Write your code here */
+    void _preOrder(Node *root, void visit(const Data &)) const;
+    void _postOrder(Node *root, void visit(const Data &)) const;
 
 
 

@@ -9,6 +9,9 @@
  The main goal of this example is build a binary tree that could be used to
  test the traversal and other binary tree functions
 
+ // Written by: Daniel Wong
+ // Reviewed & Modified by: Daniel Wong
+ // IDE: Xcode
 */
 
 #include <iostream>
