@@ -1,6 +1,8 @@
 // BST ADT - Traversals
-// Name <write your name here>
-#include "BinarySearchTree.h"  
+// Name: Daniel Wong
+// IDE: Xcode
+
+#include "BinarySearchTree.h"
 #include <iostream>
 #include <string>
 
@@ -32,16 +34,20 @@ int main()
     {
         cout << "Postorder: ";
         /* Write your code here */; // pass hDisplay to postOrder
+        bst.postOrder(hDisplay);
         cout << endl;
         /* Write your code here */; // pass vDisplay to postOrder
+        bst.postOrder(vDisplay);
         cout << endl;
     }
     else if ( option == 'E' || option == 'e')
     {
         cout << " Preorder: ";
         /* Write your code here */;  // pass hDisplay to preOrder
+        bst.preOrder(hDisplay);
         cout << endl;
         /* Write your code here */;  // pass vDisplay to preOrder
+        bst.preOrder(vDisplay);
         cout << endl;
     }
             

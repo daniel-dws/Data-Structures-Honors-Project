@@ -1,6 +1,7 @@
 // Binary Search Tree ADT
-// Created by A. Student
-// Modified by:   
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
  
 #ifndef _BINARY_SEARCH_TREE
 #define _BINARY_SEARCH_TREE

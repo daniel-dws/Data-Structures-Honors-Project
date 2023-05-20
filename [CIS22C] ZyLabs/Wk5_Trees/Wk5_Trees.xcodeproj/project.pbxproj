@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D47C2E42A18435C00B46548 /* BinaryTree_Demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E642A172E6500194071 /* BinaryTree_Demo.cpp */; };
-		5D47C2E52A18435C00B46548 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E632A172E6500194071 /* BinaryTree.cpp */; };
-		5D47C2E62A18435C00B46548 /* BinaryTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E652A172E6500194071 /* BinaryTree.h */; };
+		5D47C2E72A18484100B46548 /* BinaryNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E692A172E8E00194071 /* BinaryNode.h */; };
+		5D47C2E82A18484100B46548 /* BinarySearchTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E6A2A172E8E00194071 /* BinarySearchTree.h */; };
+		5D47C2E92A18484100B46548 /* BinaryTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E6C2A172E8E00194071 /* BinaryTree.h */; };
+		5D47C2EA2A18484100B46548 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E6B2A172E8E00194071 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -211,9 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D47C2E42A18435C00B46548 /* BinaryTree_Demo.cpp in Sources */,
-				5D47C2E52A18435C00B46548 /* BinaryTree.cpp in Sources */,
-				5D47C2E62A18435C00B46548 /* BinaryTree.h in Sources */,
+				5D47C2E72A18484100B46548 /* BinaryNode.h in Sources */,
+				5D47C2E82A18484100B46548 /* BinarySearchTree.h in Sources */,
+				5D47C2E92A18484100B46548 /* BinaryTree.h in Sources */,
+				5D47C2EA2A18484100B46548 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
