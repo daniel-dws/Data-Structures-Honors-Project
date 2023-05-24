@@ -1,6 +1,7 @@
 // Binary Search Tree ADT
-// Created by A. Student
-// Modified by: <write your name here>
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
  
 #ifndef _BINARY_SEARCH_TREE
 #define _BINARY_SEARCH_TREE
@@ -81,7 +82,6 @@ bool BinarySearchTree<ItemType>::findLargest(ItemType & returnedItem) const
 }
 
 
-
 //////////////////////////// private functions ////////////////////////////////////////////
 
 // Implementation of the insert operation - iterative algorithm
@@ -120,6 +120,14 @@ template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::_findSmallest(BinaryNode<ItemType>* nodePtr, ItemType & smallest) const
 {
  /* Write your code here */
+    if (nodePtr->getLeftPtr() == nullptr) {
+        smallest = nodePtr->getItem();
+        return nodePtr;
+    }
+    else {
+        return _findSmallest(nodePtr->getLeftPtr(), smallest);
+    }
+        
 }
 
 // Implementation to find the largest: recursive
@@ -127,6 +135,13 @@ template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::_findLargest(BinaryNode<ItemType>* nodePtr, ItemType & biggest) const
 {
     /* Write your code here */
+       if (nodePtr->getRightPtr() == nullptr) {
+           biggest = nodePtr->getItem(); 
+           return nodePtr;
+       }
+       else {
+           return _findLargest(nodePtr->getRightPtr(), biggest);
+       }
 }
 
 

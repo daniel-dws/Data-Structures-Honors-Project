@@ -1,6 +1,7 @@
 // Binary tree abstract base class
-// Created by A. Student
-// Modified by: <write your name here>
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
  
 #ifndef _BINARY_TREE
 #define _BINARY_TREE
@@ -25,7 +26,7 @@ public:
 	int getCount() const {return count;}
 	void clear()			{destroyTree(rootPtr); rootPtr = 0; count = 0;}
 	void preOrder(void visit(ItemType &)) const {_preorder(visit, rootPtr);}
-   void inOrder(void visit(ItemType &)) const  {_inorder(visit, rootPtr);}
+    void inOrder(void visit(ItemType &)) const  {_inorder(visit, rootPtr);}
 	void postOrder(void visit(ItemType &)) const{_postorder(visit, rootPtr);}
    // void printTree(void visit(ItemType &, int)) const{_printTree(visit, rootPtr, 1);}
 
@@ -63,7 +64,13 @@ void BinaryTree<ItemType>::destroyTree(BinaryNode<ItemType>* nodePtr)
 template<class ItemType>
 void BinaryTree<ItemType>::_preorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
 {
-	/* */ 
+    if (nodePtr) // != NULL
+    {
+        ItemType item = nodePtr->getItem();
+        visit(item);
+        _preorder(visit, nodePtr->getLeftPtr());
+        _preorder(visit, nodePtr->getRightPtr());
+    }
 }  
 
 // Inorder Traversal
@@ -83,7 +90,13 @@ void BinaryTree<ItemType>::_inorder(void visit(ItemType &), BinaryNode<ItemType>
 template<class ItemType>
 void BinaryTree<ItemType>::_postorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
 {
-  /* */
+    if (nodePtr) // != NULL
+        {
+            ItemType item = nodePtr->getItem();
+            _postorder(visit, nodePtr->getLeftPtr());
+            _postorder(visit, nodePtr->getRightPtr());
+            visit(item);
+        }
 }  
 
 

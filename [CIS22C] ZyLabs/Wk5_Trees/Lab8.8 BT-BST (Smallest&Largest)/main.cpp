@@ -1,6 +1,7 @@
 // BST ADT
 // Smallest/Largest
-// Name <write your name here>
+// Name: Daniel Wong
+// IDE: Xcode
 
 #include "BinarySearchTree.h"  
 #include <iostream>
@@ -36,12 +37,14 @@ int main()
     {
         int minVal;
         /* call findSmallest */
+        bst.findSmallest(minVal);
         cout << "Smallest: " << minVal << endl;
     }
     else if ( option == 'L' || option == 'l')
     {
         int maxVal;
         /* call findLargest */
+        bst.findLargest(maxVal);
         cout << "Largest: " << maxVal << endl;
     }
             
