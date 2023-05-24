@@ -1,6 +1,7 @@
 // Binary Search Tree ADT
-// Created by A. Student
-// Modified by:  <write your name here>
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
  
 #ifndef _BINARY_SEARCH_TREE
 #define _BINARY_SEARCH_TREE
@@ -66,7 +67,11 @@ bool BinarySearchTree<ItemType>::search(const ItemType& anEntry, ItemType& retur
 {
     BinaryNode<ItemType>* temp = nullptr;
     /* Write your code here */
-   
+    temp = _search(this->rootPtr, anEntry);
+    if (temp) {
+        returnedItem = temp->getItem();
+        return true;
+    }
     return false;
 }
 
@@ -113,7 +118,23 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::_search(BinaryNode<ItemType>* 
 {
     BinaryNode<ItemType>* found = nullptr;
     
-    /* Write your code here */   
+    /* Write your code here */
+    if (nodePtr == nullptr) {
+        return nodePtr = nullptr;
+    }
+    
+    if (target < nodePtr->getItem()) {
+        return _search(nodePtr->getLeftPtr(), target);
+    }
+    
+    else {
+        if (target > nodePtr->getItem()) {
+            return _search(nodePtr->getRightPtr(), target);
+        }
+        else {
+            return nodePtr;
+        }
+    }
     
     return found;
 }

@@ -1,4 +1,8 @@
 // BST ADT
+// Smallest/Largest
+// Name: Daniel Wong
+// IDE: Xcode
+
 #include "BinarySearchTree.h"   
 #include <iostream>
 #include <string>
