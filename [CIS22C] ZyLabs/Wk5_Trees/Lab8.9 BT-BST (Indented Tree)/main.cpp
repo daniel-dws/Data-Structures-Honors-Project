@@ -1,4 +1,7 @@
 // BST ADT
+// Indented Tree
+// Name: Daniel Wong
+// IDE: Xcode
 #include "BinarySearchTree.h" 
 #include <iostream>
 #include <string>

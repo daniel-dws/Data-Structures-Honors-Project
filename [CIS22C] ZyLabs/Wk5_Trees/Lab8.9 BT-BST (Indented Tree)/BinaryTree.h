@@ -1,7 +1,8 @@
 // Binary tree abstract base class
-// Created by A. Student
-// Modified by: <write your name here>
- 
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
+
 #ifndef _BINARY_TREE
 #define _BINARY_TREE
 
@@ -64,7 +65,14 @@ template<class ItemType>
 void BinaryTree<ItemType>::_preorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
 {
     /* Write your code here */
-}  
+    if (nodePtr) // != NULL
+        {
+            ItemType item = nodePtr->getItem();
+            visit(item);
+            _preorder(visit, nodePtr->getLeftPtr());
+            _preorder(visit, nodePtr->getRightPtr());
+        }
+}
 
 //Inorder Traversal
 template<class ItemType>
@@ -84,13 +92,27 @@ template<class ItemType>
 void BinaryTree<ItemType>::_postorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
 {
     /* Write your code here */
-}  
+    if (nodePtr) // != NULL
+           {
+               ItemType item = nodePtr->getItem();
+               _postorder(visit, nodePtr->getLeftPtr());
+               _postorder(visit, nodePtr->getRightPtr());
+               visit(item);
+           }
+}
 
 //Prints tree as an indented list
 template<class ItemType>
 void BinaryTree<ItemType>::_printTree(void visit(ItemType &, int), BinaryNode<ItemType>* nodePtr, int level) const
 {
      /* Write your code here */
+    if (nodePtr) // != NULL
+    {
+        ItemType item = nodePtr->getItem();
+        visit(item, level);
+        _printTree(visit, nodePtr->getRightPtr(), level+1);
+        _printTree(visit, nodePtr->getLeftPtr(), level+1);
+    }
 }
 
 #endif

@@ -1,3 +1,7 @@
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: Xcode
+
 #ifndef _BINARY_NODE
 #define _BINARY_NODE
 
