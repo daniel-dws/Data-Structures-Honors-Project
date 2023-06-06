@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D8E0BFC2A1EC3E600439863 /* BinaryNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E7B2A172F6200194071 /* BinaryNode.h */; };
-		5D8E0BFD2A1EC3E600439863 /* BinarySearchTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E7D2A172F6300194071 /* BinarySearchTree.h */; };
-		5D8E0BFE2A1EC3E600439863 /* BinaryTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E7A2A172F6200194071 /* BinaryTree.h */; };
-		5D8E0BFF2A1EC3E600439863 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA2E7C2A172F6300194071 /* main.cpp */; };
+		5D3FAC202A2955AC00A89C72 /* BinaryNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC192A29559900A89C72 /* BinaryNode.h */; };
+		5D3FAC212A2955AC00A89C72 /* BinarySearchTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC182A29559900A89C72 /* BinarySearchTree.h */; };
+		5D3FAC222A2955AC00A89C72 /* BinaryTree.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC172A29559900A89C72 /* BinaryTree.h */; };
+		5D3FAC232A2955AC00A89C72 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC1D2A29559900A89C72 /* main.cpp */; };
+		5D3FAC242A2955B700A89C72 /* Park.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC1B2A29559900A89C72 /* Park.cpp */; };
+		5D3FAC252A2955B700A89C72 /* Park.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC1A2A29559900A89C72 /* Park.h */; };
+		5D3FAC272A2955D600A89C72 /* national_parks.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D3FAC1C2A29559900A89C72 /* national_parks.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5D3FAC262A2955D000A89C72 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				5D3FAC272A2955D600A89C72 /* national_parks.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DFA2E4F2A172DF500194071 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -26,6 +39,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D3FAC172A29559900A89C72 /* BinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		5D3FAC182A29559900A89C72 /* BinarySearchTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
+		5D3FAC192A29559900A89C72 /* BinaryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryNode.h; sourceTree = "<group>"; };
+		5D3FAC1A2A29559900A89C72 /* Park.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Park.h; sourceTree = "<group>"; };
+		5D3FAC1B2A29559900A89C72 /* Park.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Park.cpp; sourceTree = "<group>"; };
+		5D3FAC1C2A29559900A89C72 /* national_parks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = national_parks.txt; sourceTree = "<group>"; };
+		5D3FAC1D2A29559900A89C72 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5DFA2E512A172DF500194071 /* Wk5_Trees */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Wk5_Trees; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFA2E5C2A172E2700194071 /* BinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 		5DFA2E5D2A172E2700194071 /* BinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
@@ -71,7 +91,7 @@
 				5DFA2E6E2A172E9B00194071 /* Lab8.8 BT-BST (Smallest&Largest) */,
 				5DFA2E742A172EC400194071 /* Lab8.9 BT-BST (Indented Tree) */,
 				5DFA2E7F2A172F6B00194071 /* Lab8.12 BT-BST (Search) */,
-				5DFA2E852A172F9600194071 /* Lab8.14 BT-BST (ADT) */,
+				5DFA2E852A172F9600194071 /* Lab8.14 BT-BST (ADT Park) */,
 				5DFA2E522A172DF500194071 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,11 +168,18 @@
 			path = "Lab8.12 BT-BST (Search)";
 			sourceTree = "<group>";
 		};
-		5DFA2E852A172F9600194071 /* Lab8.14 BT-BST (ADT) */ = {
+		5DFA2E852A172F9600194071 /* Lab8.14 BT-BST (ADT Park) */ = {
 			isa = PBXGroup;
 			children = (
+				5D3FAC192A29559900A89C72 /* BinaryNode.h */,
+				5D3FAC182A29559900A89C72 /* BinarySearchTree.h */,
+				5D3FAC172A29559900A89C72 /* BinaryTree.h */,
+				5D3FAC1D2A29559900A89C72 /* main.cpp */,
+				5D3FAC1C2A29559900A89C72 /* national_parks.txt */,
+				5D3FAC1B2A29559900A89C72 /* Park.cpp */,
+				5D3FAC1A2A29559900A89C72 /* Park.h */,
 			);
-			path = "Lab8.14 BT-BST (ADT)";
+			path = "Lab8.14 BT-BST (ADT Park)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +192,7 @@
 				5DFA2E4D2A172DF500194071 /* Sources */,
 				5DFA2E4E2A172DF500194071 /* Frameworks */,
 				5DFA2E4F2A172DF500194071 /* CopyFiles */,
+				5D3FAC262A2955D000A89C72 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -212,10 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D8E0BFC2A1EC3E600439863 /* BinaryNode.h in Sources */,
-				5D8E0BFD2A1EC3E600439863 /* BinarySearchTree.h in Sources */,
-				5D8E0BFE2A1EC3E600439863 /* BinaryTree.h in Sources */,
-				5D8E0BFF2A1EC3E600439863 /* main.cpp in Sources */,
+				5D3FAC242A2955B700A89C72 /* Park.cpp in Sources */,
+				5D3FAC252A2955B700A89C72 /* Park.h in Sources */,
+				5D3FAC202A2955AC00A89C72 /* BinaryNode.h in Sources */,
+				5D3FAC212A2955AC00A89C72 /* BinarySearchTree.h in Sources */,
+				5D3FAC222A2955AC00A89C72 /* BinaryTree.h in Sources */,
+				5D3FAC232A2955AC00A89C72 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
