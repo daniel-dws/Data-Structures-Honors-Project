@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D3FAC532A2ECA8D00A89C72 /* HashNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC3E2A2EC9CB00A89C72 /* HashNode.h */; };
-		5D3FAC542A2ECA8D00A89C72 /* HashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC3F2A2EC9CB00A89C72 /* HashTable.cpp */; };
-		5D3FAC552A2ECA8D00A89C72 /* HashTable.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC3D2A2EC9CA00A89C72 /* HashTable.h */; };
-		5D3FAC562A2ECA8D00A89C72 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC3C2A2EC9CA00A89C72 /* main.cpp */; };
-		5D3FAC572A2ECA8D00A89C72 /* Student.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC402A2EC9CB00A89C72 /* Student.h */; };
+		5D94C8812A33DDBF00E00921 /* HashNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC4E2A2ECA6300A89C72 /* HashNode.h */; };
+		5D94C8822A33DDBF00E00921 /* HashTable.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC502A2ECA6300A89C72 /* HashTable.h */; };
+		5D94C8832A33DDBF00E00921 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC4F2A2ECA6300A89C72 /* main.cpp */; };
+		5D94C8842A33DDBF00E00921 /* Student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC4D2A2ECA6300A89C72 /* Student.cpp */; };
+		5D94C8852A33DDBF00E00921 /* Student.h in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FAC4C2A2ECA6300A89C72 /* Student.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,11 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3FAC532A2ECA8D00A89C72 /* HashNode.h in Sources */,
-				5D3FAC542A2ECA8D00A89C72 /* HashTable.cpp in Sources */,
-				5D3FAC552A2ECA8D00A89C72 /* HashTable.h in Sources */,
-				5D3FAC562A2ECA8D00A89C72 /* main.cpp in Sources */,
-				5D3FAC572A2ECA8D00A89C72 /* Student.h in Sources */,
+				5D94C8812A33DDBF00E00921 /* HashNode.h in Sources */,
+				5D94C8822A33DDBF00E00921 /* HashTable.h in Sources */,
+				5D94C8832A33DDBF00E00921 /* main.cpp in Sources */,
+				5D94C8842A33DDBF00E00921 /* Student.cpp in Sources */,
+				5D94C8852A33DDBF00E00921 /* Student.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

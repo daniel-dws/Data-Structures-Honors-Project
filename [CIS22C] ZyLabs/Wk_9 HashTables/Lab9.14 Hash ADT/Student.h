@@ -1,6 +1,6 @@
 // Specification file for the Student class
-// Modified by:
-// IDE:
+// Modified by: Daniel Wong
+// IDE: xCode
 
 #ifndef STUDENT_H
 #define STUDENT_H
@@ -11,6 +11,7 @@ class Student; // Forward Declaration
 
 // Function Prototypes for friend functions
 /* Write your code here */
+int key_to_index(const Student &key, int size);
 
 class Student
 {
@@ -30,8 +31,10 @@ public:
     
     // Overloaded operators
     /* Write your code here */
+    bool operator == (const Student &right) {return (name == right.name);}  // Overloaded ==
     
     // friend functions
     /* Write your code here */
+    friend int key_to_index();
 };
 #endif
