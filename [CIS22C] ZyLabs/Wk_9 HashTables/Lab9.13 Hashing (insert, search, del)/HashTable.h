@@ -23,14 +23,14 @@ public:
 	~HashTable(){ delete [] hashAry; }
 
 	int getCount() const	{ return count; }
-   int getSize() const { return hashSize; }
+    int getSize() const { return hashSize; }
    
-   double getLoadFactor() const {return 100.0 * count / hashSize; }
-   bool isEmpty() const	{ return count == 0; }
-   bool isFull()  const	{ return count == hashSize; }
-   bool insert(const Student &itemIn);
-   bool remove(Student &itemOut, string key);
-   int search(Student &itemOut, string key) const;
+    double getLoadFactor() const {return 100.0 * count / hashSize; }
+    bool isEmpty() const	{ return count == 0; }
+    bool isFull()  const	{ return count == hashSize; }
+    bool insert(const Student &itemIn);
+    bool remove(Student &itemOut, string key);
+    int search(Student &itemOut, string key) const;
     
 private:
    int _hash(string key) const;

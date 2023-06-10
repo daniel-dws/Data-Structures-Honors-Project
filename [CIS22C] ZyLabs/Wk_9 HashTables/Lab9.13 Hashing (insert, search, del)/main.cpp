@@ -2,7 +2,7 @@
  CIS 22C
  Hashing - Linear Probe: insert, search, and delete 
  Written By: A. Student
- Reviewed & Modified by: <Write your name here>
+ Reviewed & Modified by: Daniel Wong
 */
 
 #include <iostream>
@@ -43,9 +43,9 @@ void buildHash(HashTable &hash)
    
     for (int i = 0; list[i].getName() != ""; i++)
     {
-        /* insert list[i] into the hash table: call hash insert  */ 
+        /* insert list[i] into the hash table: call hash insert  */
+        hash.insert(list[i]);
     }
-   
 }
 
 /* **************************************************
@@ -62,7 +62,7 @@ void searchManager(const HashTable &hash)
    while (name != "#")
    {
         Student item;
-        int nc = /* call hash search */;
+        int nc = hash.search(item, name);
         if (nc != -1)
         {
             cout << item.getName() << " " << item.getGpa() << " (" << nc << " collisions!)" << endl;
@@ -89,7 +89,7 @@ void deleteManager(HashTable &hash)
    while (name != "#")
    {
         Student itemOut;
-        if ( /* call hash remove  */ )
+        if (hash.remove(itemOut, name))
         {
             cout << itemOut.getName() << " " << itemOut.getGpa() << " - deleted!" << endl;
         }
@@ -117,7 +117,7 @@ void insertManager(HashTable &hash)
    while (name != "#")
    {
         Student found;
-        if ( /*  call hash search  */ )
+        if (hash.search(found, name) != -1) //reject duplicates
         {
             cout << "Duplicate key: " << found.getName() << " - rejected!" << endl;
         }
@@ -129,7 +129,8 @@ void insertManager(HashTable &hash)
             cin.ignore();
             Student newStudent(name, gpa);
             /* call hash insert */;
-            cout << name << " - inserted (" << /*  call hash search  */ << " collisions)" << endl;
+            hash.insert(newStudent);
+            cout << name << " - inserted (" << hash.search(newStudent, name) << " collisions)" << endl;
         }
         cout << "Load Factor: " << hash.getLoadFactor() << endl;
         cout << "Enter name [# to stop reading]:" << endl;
