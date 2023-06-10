@@ -1,4 +1,7 @@
 // Specification file for the Hash class
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
 
 #ifndef HASHTABLE_H_
 #define HASHTABLE_H_
@@ -12,7 +15,7 @@ class HashTable
 private:
 	HashNode* hashAry;
 	int hashSize;
-   int count;
+    int count;
 	
 public:
 	HashTable() { count = 0; hashSize = 53; hashAry = new HashNode[hashSize]; }
@@ -20,14 +23,14 @@ public:
 	~HashTable(){ delete [] hashAry; }
 
 	int getCount() const	{ return count; }
-   int getSize() const { return hashSize; }
-   double getLoadFactor() const {return 100.0 * count / hashSize; }
-   bool isEmpty() const	{ return count == 0; }
-   bool isFull()  const	{ return count == hashSize; }
+    int getSize() const { return hashSize; }
+    double getLoadFactor() const {return 100.0 * count / hashSize; }
+    bool isEmpty() const	{ return count == 0; }
+    bool isFull()  const	{ return count == hashSize; }
     
-   bool insert( const Student &itemIn );
-   bool remove( Student &itemOut );
-   bool search( Student &itemOut, int &noCol, string key);
+    bool insert( const Student &itemIn );
+    bool remove( Student &itemOut );
+    bool search( Student &itemOut, int &noCol, string key);
     
 private:
    int _hash(string key) const;

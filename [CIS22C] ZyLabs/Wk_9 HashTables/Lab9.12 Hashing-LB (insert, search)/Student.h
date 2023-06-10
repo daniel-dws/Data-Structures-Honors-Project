@@ -1,4 +1,7 @@
 // Specification file for the Student class
+// Created by Daniel Wong
+// Modified by: Daniel Wong
+// IDE: Xcode
 
 #ifndef STUDENT_H
 #define STUDENT_H

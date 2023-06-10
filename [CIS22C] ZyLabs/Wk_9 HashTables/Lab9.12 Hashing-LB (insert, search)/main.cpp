@@ -4,8 +4,8 @@
  This program builds and searches a hash table.
   
  Written by: A. Student
- Reviewed & Modified by: <Write your name here>
- IDE:
+ Reviewed & Modified by: Daniel Wong
+ IDE: xCode
  
  */
 #include <iostream>
@@ -25,10 +25,12 @@ int main()
     string option;
     
     /* call buildHash() */
+    buildHash(hash);
     
-    cout << "Load Factor: " << /* getLoadFactor() */ << endl;
+    cout << "Load Factor: " << hash.getLoadFactor() << endl;
     
-    /* call searchManager */    
+    /* call searchManager */
+    searchManager(hash);
  
     return 0;
 }
