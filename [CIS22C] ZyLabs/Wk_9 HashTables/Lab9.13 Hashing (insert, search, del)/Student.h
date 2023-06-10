@@ -1,5 +1,6 @@
 // Specification file for the Student class
 // Written by: A. Student
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 #ifndef STUDENT_H

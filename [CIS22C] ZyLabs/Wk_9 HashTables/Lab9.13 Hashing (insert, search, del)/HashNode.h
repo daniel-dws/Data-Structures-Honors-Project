@@ -1,5 +1,6 @@
 // Specification file for the HashNode class
 // Written By: A. Student
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 #ifndef _HASH_NODE

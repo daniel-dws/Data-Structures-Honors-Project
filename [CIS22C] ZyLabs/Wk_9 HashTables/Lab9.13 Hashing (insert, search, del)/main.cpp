@@ -3,6 +3,7 @@
  Hashing - Linear Probe: insert, search, and delete 
  Written By: A. Student
  Reviewed & Modified by: Daniel Wong
+ // IDE: Xcode
 */
 
 #include <iostream>

@@ -1,6 +1,7 @@
 // Implementation file for the Hash class
 // Written By: A. Student
 // Reviewed & Modified by: Daniel Wong
+// IDE: Xcode
 
 #include <string>
 
