@@ -1,6 +1,7 @@
 /* *~*~*
 Specification file for the Heap class: max-heap of integers
 Written By: A. Student
+Changed by: Daniel Wong
 IDE: Xcode  
 *~**/
 

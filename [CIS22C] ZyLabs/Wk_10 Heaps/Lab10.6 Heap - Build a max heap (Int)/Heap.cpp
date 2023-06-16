@@ -1,8 +1,8 @@
 /* *~*~*
 Implementation file for the Heap class: max-heap of integers
 Written By: A. Student
-Changed by: <Write your name here>
-IDE:  
+Changed by: Daniel Wong
+IDE: xCode
 *~**/
 
 #include "Heap.h"
@@ -16,6 +16,16 @@ void Heap::_reHeapUp(int lastndx)
 	if (lastndx) // means lastndx != 0, i.e. newElement is not heap's root
 	{
 		/* Write your code here */
+        int parent = _findParent(lastndx);
+        
+        if (heapAry[lastndx] > heapAry[parent])
+        {
+            int temp = heapAry[lastndx];
+            heapAry[lastndx] = heapAry[parent];
+            heapAry[parent] = temp;
+            
+            _reHeapUp(parent);
+        }
 	}
 }
 
@@ -28,7 +38,24 @@ void Heap::_reHeapDown(int rootdex)
 	int left = _findLeftChild(rootdex);
 	if (left != -1) // if there's a left child
 	{
-			/* Write your code here */
+        /* Write your code here */
+        int largest = left;
+        int right = _findRightChild(rootdex);
+        if (right != -1) // if there's a right child
+        {
+            if (heapAry[right] > heapAry[left])
+            {
+                largest = right;
+            }
+        }
+        if (heapAry[largest] > heapAry[rootdex])
+        {
+            int temp = heapAry[largest];
+            heapAry[largest] = heapAry[rootdex];
+            heapAry[rootdex] = temp;
+            
+            _reHeapDown(largest);
+        }
 	}
 
 }
@@ -44,6 +71,9 @@ bool Heap::insertHeap(int newItem)
 	}
 	
 	/* Write your code here */
+    heapAry[count]= newItem;
+    _reHeapUp(count);
+    count++;
 	
 	return true;
 }
@@ -59,5 +89,10 @@ bool Heap::deleteHeap(int &returnItem)
 		return false;
 	}	
 	/* Write your code here */
+    returnItem = heapAry[0];
+    heapAry[0] = heapAry[count - 1];
+    count--;
+    _reHeapDown(0);
+    
 	return true;
 }
