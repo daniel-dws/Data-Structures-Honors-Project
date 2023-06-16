@@ -1,8 +1,8 @@
 /* *~*~*
 Heap template
 Written By: A. Student
-Changed by:
-IDE:  
+Changed by: Daniel Wong
+IDE: xCode
 *~**/
 
 #ifndef HEAP_H_
@@ -12,28 +12,28 @@ template<class ItemType>
 class Heap
 {
 private:
-	ItemType* heapAry;
-	int heapSize;
-	int count;
+    ItemType* heapAry;
+    int heapSize;
+    int count;
 
-	// function pointer compare : 0 means equal, 1 means left > right, -1 means left < right
-	void _reHeapUp(int lastndx, int compare(const ItemType &, const ItemType &));
-	void _reHeapDown(int rootndx, int compare(const ItemType &, const ItemType &));
-	int _findParent(int index) { return (index <= 0) ? (-1) : (index - 1) / 2; }
-	int _findLeftChild(int index) { return (2 * index + 1 >= count) ? (-1) : (2 * index + 1); }
-	int _findRightChild(int index) { return (2 * index + 2 >= count) ? (-1) : (2 * index + 2); }
+    // function pointer compare : 0 means equal, 1 means left > right, -1 means left < right
+    void _reHeapUp(int lastndx, int compare(const ItemType &, const ItemType &));
+    void _reHeapDown(int rootndx, int compare(const ItemType &, const ItemType &));
+    int _findParent(int index) { return (index <= 0) ? (-1) : (index - 1) / 2; }
+    int _findLeftChild(int index) { return (2 * index + 1 >= count) ? (-1) : (2 * index + 1); }
+    int _findRightChild(int index) { return (2 * index + 2 >= count) ? (-1) : (2 * index + 2); }
 
 public:
-	Heap() { count = 0; heapSize = 128; heapAry = new ItemType[heapSize]; }
-	Heap(int n) { count = 0; heapSize = n;	heapAry = new ItemType[heapSize]; }
-	~Heap() { delete[] heapAry; }
+    Heap() { count = 0; heapSize = 128; heapAry = new ItemType[heapSize]; }
+    Heap(int n) { count = 0; heapSize = n;    heapAry = new ItemType[heapSize]; }
+    ~Heap() { delete[] heapAry; }
 
-	int getCount() const { return count; }
-	int getSize() const { return heapSize; }
-	bool isEmpty() const { return count == 0; }
-	bool isFull()  const { return count == heapSize; }
-	bool insertHeap(ItemType &itemIn, int compare(const ItemType &, const ItemType &));
-	bool deleteHeap(ItemType &itemOut, int compare(const ItemType &, const ItemType &));
+    int getCount() const { return count; }
+    int getSize() const { return heapSize; }
+    bool isEmpty() const { return count == 0; }
+    bool isFull()  const { return count == heapSize; }
+    bool insertHeap(ItemType &itemIn, int compare(const ItemType &, const ItemType &));
+    bool deleteHeap(ItemType &itemOut, int compare(const ItemType &, const ItemType &));
 
 };
 
@@ -44,10 +44,19 @@ public:
 template<class ItemType>
 void Heap<ItemType>::_reHeapUp(int lastndx, int compare(const ItemType &, const ItemType &))
 {
-	if (lastndx) // newElement is not heap's root
-	{
-		/* Write your code here */
-	}
+    if (lastndx) // means lastndx != 0, i.e. newElement is not heap's root
+    {
+        int parent = _findParent(lastndx); // parent = parent of newElement
+        /* Write your code here */
+        if (compare(heapAry[lastndx], heapAry[parent]) == -1)
+        {
+            ItemType temp = heapAry[lastndx];
+            heapAry[lastndx] = heapAry[parent];
+            heapAry[parent] = temp;
+            
+            _reHeapUp(parent, compare);
+        }
+    }
 }
 
 /* *~*~*
@@ -57,12 +66,29 @@ void Heap<ItemType>::_reHeapUp(int lastndx, int compare(const ItemType &, const 
 template<class ItemType>
 void Heap<ItemType>::_reHeapDown(int rootdex, int compare(const ItemType &, const ItemType &))
 {
-	int left = _findLeftChild(rootdex);
+    int left = _findLeftChild(rootdex);
 
-	if (left != -1) // if there's a left child
-	{
-		/* Write your code here */
-	}
+    if (left != -1) // if there's a left child
+    {
+        /* Write your code here */
+        int largest = left;
+        int right = _findRightChild(rootdex);
+        if (right != -1) // if there's a right child
+        {
+            if (compare(heapAry[right], heapAry[left]) == -1)
+            {
+                largest = right;
+            }
+        }
+        if (compare(heapAry[largest], heapAry[rootdex]) == -1)
+        {
+            ItemType temp = heapAry[largest];
+            heapAry[largest] = heapAry[rootdex];
+            heapAry[rootdex] = temp;
+            
+            _reHeapDown(largest, compare);
+        }
+    }
 
 }
 /* *~*~*
@@ -72,12 +98,15 @@ void Heap<ItemType>::_reHeapDown(int rootdex, int compare(const ItemType &, cons
 template<class ItemType>
 bool Heap<ItemType>::insertHeap(ItemType& newItem, int compare(const ItemType &, const ItemType &))
 {
-	if (isFull())
-		return false;
-	
-	/* Write your code here */
-	
-	return true;
+    if (isFull())
+        return false;
+    
+    /* Write your code here */
+    heapAry[count] = newItem;
+    _reHeapUp(count, compare);
+    count++;
+    
+    return true;
 }
 
 /* *~*~*
@@ -87,12 +116,16 @@ bool Heap<ItemType>::insertHeap(ItemType& newItem, int compare(const ItemType &,
 template<class ItemType>
 bool Heap<ItemType>::deleteHeap(ItemType& returnItem, int compare(const ItemType &, const ItemType &))
 {
-	if (isEmpty())
-		return false;
+    if (isEmpty())
+        return false;
 
-	/* Write your code here */
+    /* Write your code here */
+    returnItem = heapAry[0];
+    heapAry[0] = heapAry[count - 1];
+    count--;
+    _reHeapDown(0, compare);
 
-	return true;
+    return true;
 }
 
-#endif   
+#endif
