@@ -5,8 +5,8 @@
      - display the integers as they are deleted from the max-heap.
      
    Written By: A. Student
-   Changed by:
-   IDE:
+   Changed by: Daniel Wong
+   IDE: xCode
 */
 
 #include <iostream>
@@ -19,7 +19,7 @@ int compareMax(int, int);
 
 int main()
 {
-	 Heap minHeap(32);
+    Heap minHeap(32);
     Heap maxHeap(32);
 	
 	 // build min- and max-heaps
@@ -30,8 +30,10 @@ int main()
     {
         /* Write your code here:
            call insertHeap to insert num into the min-heap */
+           minHeap.insertHeap(num, compareMin);
         /* Write your code here:
            call insertHeap to insert num into the max-heap */
+           maxHeap.insertHeap(num, compareMax);
         cin >> num;
     }
    
