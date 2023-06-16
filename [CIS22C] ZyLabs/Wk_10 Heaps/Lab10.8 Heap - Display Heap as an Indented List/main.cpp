@@ -3,6 +3,10 @@
      - read integers from the keyboard and insert them into a min-heap,
      - display the min-heap as an indented list (level numbers included) and
      - display the integers as they are deleted from the heap.
+ 
+  Written By: A. Student
+  Changed by: Daniel Wong
+  IDE: Xcode
 */
 
 #include <iostream>
@@ -42,7 +46,6 @@ int main()
 
 	return 0;
 }
-
 
 /* 
   indented display:
