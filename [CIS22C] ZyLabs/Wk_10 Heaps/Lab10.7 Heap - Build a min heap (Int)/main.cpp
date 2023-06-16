@@ -2,6 +2,10 @@
   This program will read integers from the keyboard,
   insert them into a min-heap, and display them as
   they are deleted from the heap.
+ 
+  Written By: A. Student
+  Changed by: Daniel Wong
+  IDE: Xcode
 */
 
 #include <iostream>

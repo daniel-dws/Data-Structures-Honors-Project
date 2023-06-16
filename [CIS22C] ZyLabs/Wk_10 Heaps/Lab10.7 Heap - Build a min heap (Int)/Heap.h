@@ -1,8 +1,8 @@
 /* *~*~*
 Specification file for the Heap class: min-heap of integers
 Written By: A. Student
-Changed by:
-IDE:  
+Changed by: Daniel Wong
+IDE: xCode
 *~**/
 
 #ifndef HEAP_H_
