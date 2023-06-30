@@ -2,8 +2,8 @@
 CIS 22C
 Project: Stack of strings (Destructor)
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: ZyBooks
 *~*/
 #include <iostream>
 #include <string>
@@ -61,27 +61,33 @@ bool Stack_str::push(string item)
 Stack_str::~Stack_str()
 {
    StackNode *currNode;
+   StackNode *tempNode;
 
    // Position nodePtr at the top of the stack.
    currNode = top;
 
    // Traverse the list deleting each node.
-   while (currNode) 
+   while (currNode != nullptr)
    {
+      tempNode = currNode; //set node value with a temporary to delete
       cout << currNode->value << " - deleted!" << endl;
-      delete currNode;
-      currNode = NULL;
-      currNode = currNode->next;
+      delete currNode; //delete node
+      currNode = NULL; //set value = null
+      currNode = tempNode->next; //move value on from temp
    }
+   
    cout << "Empty stack!" << endl;
 }
 
 int main() {
 
      Stack_str s;
-     int item;
+     string item = " ";
      
      /* Write your code here */
+     while (getline(cin, item) && item != "0") {
+        s.push(item); //push item while val != 0
+     }
      
      return 0;
 }
