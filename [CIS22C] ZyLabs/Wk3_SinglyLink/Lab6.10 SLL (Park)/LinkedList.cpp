@@ -1,6 +1,6 @@
 // Implementation file for the LinkedList class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 
@@ -106,7 +106,8 @@ void LinkedList::displayList() const
      while (pCur)
      {
          // Display the value in this node.
-         pCur->park.hDdisplay();
+         //pCur->park.hDdisplay();
+         cout << pCur->park;
          
          // Move to the next node.
          pCur = pCur->next;
@@ -123,10 +124,25 @@ bool LinkedList::searchList(string target, Park &dataOut) const
 {
     bool found = false; // assume target not found
     Node *pCur;         // To move through the list
+    Node *pPre;
+    
+    // Initialize pointers
+    pPre = head;
+    pCur = head->next;
     
     /* Write your code here */
+    while (pCur != nullptr) { //iterate through nodes until null is reached
+        if (pCur->park.getCode() == target) { //if target is found
+            found = true; //update boolean to true
+            dataOut = pCur->park; //return object of the node
+            break; //Break after target is found so loop stops running
+        }
+        else {
+            pCur = pCur->next;
+        }
+    }
     
-    return found;
+    return found; //return value of boolean
 }
 
 // **************************************************

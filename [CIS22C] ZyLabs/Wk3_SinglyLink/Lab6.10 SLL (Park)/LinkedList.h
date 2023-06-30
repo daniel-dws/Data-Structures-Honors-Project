@@ -1,6 +1,6 @@
 // Specification file for the LinkedList class
-// Written By: A. Student
-// Reviewed by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed by: Daniel Wong
 // IDE: Xcode
 
 #ifndef LINKED_LIST_H
@@ -29,6 +29,8 @@ public:
     bool deleteNode(string);
     void displayList() const;
     bool searchList(string, Park &) const;
+
 };
 
 #endif
+

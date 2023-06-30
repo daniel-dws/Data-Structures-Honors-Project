@@ -1,12 +1,14 @@
 // Specification file for the Park class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 #ifndef PARK_H
 #define PARK_H
 
-//#include<iostream>
+
+
+#include<iostream>
 #include<string>
 //#include<cstdlib>
 
@@ -16,8 +18,14 @@
     // namespace management problems for the entire project
     // (such as name collisions).
     // Do not write using namespace at the top level in a header file!
-
+using std::ostream;
+using std::istream;
 using std::string;
+
+//class Park; //Forward declaration
+//Overloaded Stream Operator
+//friend ostream &operator << (ostream &, const Park &);
+//istream &operator >> (istream &, const Park &);
 
 class Park
 {
@@ -48,8 +56,11 @@ class Park
     int getYear() const {return year;}
 
     //other functions
-    void hDdisplay()const; 
+    void hDdisplay()const;
     void vDisplay()const;
+    
+    //Friend overloading
+    friend ostream &operator << (ostream &, const Park &);
 };
 
 #endif

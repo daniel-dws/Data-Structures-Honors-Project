@@ -5,13 +5,13 @@
  The list is sorted in ascending order by the park code.
  Assume that the park code is unique.
  
- Written by: A. Student
- Reviewed & Modified by: <Write your name here>
- IDE: 
+ Written by: Daniel Wong
+ Reviewed & Modified by: Daniel Wong
+ IDE: ZyBooks
  */
 
-// Written By: A. Student
-// Changed By:
+// Written By: Daniel Wong
+// Changed By: Daniel Wong
 // IDE: Xcode
 
 
@@ -79,7 +79,7 @@ void buildList(const string &filename, LinkedList &list)
     inputFile.close();
 }
 
-/* 
+/*
  Delete manager: delete items from the list until the user enters Q to quit
  deleting
  Input Parameter: list
@@ -98,7 +98,7 @@ void deleteManager(LinkedList &list)
 
         if(targetCode != "Q")
         {
-            if(/* Write your code here: call deleteNode() */)
+            if(list.deleteNode(targetCode))
                 cout << "    " << targetCode << " has been deleted!" << endl;
             else
                 cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
@@ -126,7 +126,7 @@ void searchManager(const LinkedList &list)
 
         if(targetCode != "Q")
         {
-            if(/* Write your code here: call searchList() */)
+            if(list.searchList(targetCode, aPark))
                 aPark.vDisplay();
             else
                 cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
@@ -135,7 +135,7 @@ void searchManager(const LinkedList &list)
     cout << "___________________END SEARCH SECTION _____" << endl;
 }
 
-/* 
+/*
 Display manager:
  - displays the number of national parks in this list
  - calls the displayList() function upon request
@@ -145,7 +145,7 @@ void displayManager(const LinkedList &list)
 {
     string action;
     
-    cout << "Number of National Parks in this list: " << /* Write your code here: call getLength() */ endl;
+    cout << "Number of National Parks in this list: " << list.getLength() << endl;
     
     cout << "\nDisplay list [Y/N]? ";
     cin >> action;
@@ -153,5 +153,6 @@ void displayManager(const LinkedList &list)
     {
         cout << endl;
         /* Write your code here: call displayList() */
+        list.displayList();
     }
 }

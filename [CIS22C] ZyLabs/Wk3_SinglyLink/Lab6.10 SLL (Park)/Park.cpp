@@ -1,6 +1,6 @@
 // Implementation file for the Park class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 
@@ -24,6 +24,11 @@ Park::Park()
     year = -1;
 }
 
+ostream &operator << (ostream &out, const Park &park) {
+    out << park.code << " " << park.state << " " << park.year << " " << park.name << " " << endl;
+    return out;
+}
+
 // **************************************************
 // Overloaded Constructor
 // **************************************************
@@ -40,13 +45,13 @@ Park::Park(string cd, string st, string nm, string dsc, int yr)
 // Displays the values of a Park object member variables
 // on one line (horizontal display)
 // ***********************************************************
-void Park::hDdisplay() const
+/*void Park::hDdisplay() const COMMENT OUT FOR OVERLOAD
 {
     cout << code  << " ";
     cout << state << " ";
     cout << year  << " ";
     cout << name << " " << endl;
-}
+}*/
 
 // ***********************************************************
 // Displays the values of a Park object member variables
@@ -57,6 +62,6 @@ void Park::vDisplay() const
     cout << name << endl;
     cout << "    \"" << description << "\"" << endl;
     cout << year << endl;
-    cout << state << endl;    
+    cout << state << endl;
 }
 
