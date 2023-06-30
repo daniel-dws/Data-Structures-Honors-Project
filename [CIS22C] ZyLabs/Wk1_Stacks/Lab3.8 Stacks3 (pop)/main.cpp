@@ -2,8 +2,8 @@
 CIS 22C
 Project: Stack of strings (pop)
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: ZyBooks
 *~*/
 #include <iostream>
 #include <string>
@@ -26,11 +26,11 @@ public:
    // ~Stack_str();                          // Destructor
 
    // Stack operations
-   bool isEmpty(); /* Write your code here */
+   bool isEmpty() {return length == 0;}/* Write your code here */
    bool push(string);
    string pop();
    string peek();
-   int getLength();
+   int getLength() {return length;}
 };
 
 /**~*~*~*
@@ -60,14 +60,39 @@ bool Stack_str::push(string item)
   Assume stack is not empty
 *~**/
 /* Define the pop function */
-
+string Stack_str::pop()
+{
+   StackNode *currNode;
+   currNode = top;
+   
+   string temp = top->value; //hold temporary value of node
+   
+   top = top->next; //move value onto next
+   delete currNode; //delete node
+   
+   length--; //lower the length
+   return temp;
+}
 
 int main() {
 
-     Stack_str s;
-     string item;
-
-     /* Write your code here to test the push and pop functions */
+   Stack_str s;
+   string item;
      
-     return 0;
+   /* Write your code here to test the push and pop functions */
+   while (getline(cin, item) && item != "0") {
+      s.push(item); //push item while val != 0
+   }
+   
+   int stackLength = s.getLength(); //hold length in var
+
+   if (s.getLength() != 0) { //check if stack length !=0
+      for (int i = 0; i < stackLength; i++) {
+         cout << s.pop() << endl; //pop values in a loop accordingly
+      }
+   }
+   
+   else {
+       cout << "Empty Stack!" << endl;
+   }
 }
