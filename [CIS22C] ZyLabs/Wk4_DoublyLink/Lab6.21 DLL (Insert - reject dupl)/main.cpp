@@ -11,11 +11,11 @@ This program:
 Your task is to finish writing the following three functions:
 - default constructor (reuse code from your previous lab)
 - `displayListBack()`  (reuse code from your previous lab)
-- `insertNode()`  - change this function to reject duplicates. Assume `name` is a unique key. 
+- `insertNode()`  - change this function to reject duplicates. Assume `name` is a unique key.
 
- Written by: A. Student
- Reviewed by: <Write your name here>
- IDE:
+ Written by: Daniel Wong
+ Reviewed by: Daniel Wong
+ IDE: xCode
  
  */
 #include <iostream>
@@ -48,6 +48,7 @@ int main()
     cout << endl;
     list.displayListForw();
     /* Write your code here: display the list from Z to A */
+    list.displayListBack();
     return 0;
 }
 /* **************************************************

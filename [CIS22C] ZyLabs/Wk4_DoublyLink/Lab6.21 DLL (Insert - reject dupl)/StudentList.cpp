@@ -1,7 +1,7 @@
 // Sorted Circular Doubly-Linked List with Sentinel Node
 // Implementation file for the Student List class
-// Reviewed & Modified by: <Write your name here>
-// IDE:
+// Reviewed & Modified by: Daniel Wong
+// IDE: Daniel Wong
 
 #include <iostream>         // For cout  and NULL
 #include "StudentList.h"
@@ -23,6 +23,7 @@ StudentList::StudentList()
     head->stu.name = "";
     head->forw = head;
     /* Write your code here */
+    head->back = head;
     count = 0;
 }
 
@@ -59,6 +60,18 @@ void StudentList::displayListForw() const
 void StudentList::displayListBack() const
 {
     /* Write your code here */
+    ListNode *pPre;
+    
+    pPre = head->back; //set pPre
+    
+    while (pPre != head)
+    {
+        cout << pPre->stu.gpa << " " << pPre->stu.name << endl; //cout inverted values
+        
+        pPre = pPre->back;
+    }
+    
+    cout << endl;
 }
 
 // **************************************************
@@ -89,23 +102,31 @@ bool StudentList::insertNode(Student dataIn)
     }
     
    /* Write your code here */
+    if (pCur->stu.name == dataIn.name) {
+        success = false;
+    }
 
-    // Insert the new node between pPre and pCur
-    ListNode *pPre = pCur->back;     // The previous node
-    pPre->forw = newNode;
-    newNode->forw = pCur;
-    
-     /* Write your code here */
-    
-    // Update the counter
-    count++;
-    
-    return success;
+    else {
+        // Insert the new node between pPre and pCur
+        ListNode *pPre = pCur->back;     // The previous node
+        pPre->forw = newNode;
+        newNode->forw = pCur;
+        
+        /* Write your code here */
+        pCur->back = newNode; //update back of pCur
+        newNode->back = pPre; //update back of newNode
+        
+        // Update the counter and boolean
+        success = true;
+        count++;
+
+    }
+
+    return success; //return boolean at end of program
 }
-
 // **************************************************
-// Destructor                                       
-// This function deletes every node in the list.    
+// Destructor
+// This function deletes every node in the list.
 // **************************************************
 StudentList::~StudentList()
 {
