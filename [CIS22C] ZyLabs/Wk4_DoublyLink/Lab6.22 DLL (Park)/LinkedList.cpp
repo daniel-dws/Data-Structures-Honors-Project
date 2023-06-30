@@ -1,7 +1,7 @@
 // Implementation file for the LinkedList class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE: Xcode 
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 #include <iostream>
 #include "LinkedList.h"
@@ -52,7 +52,8 @@ void LinkedList::insertNode(Park dataIn)
     newNode->setNext(pCur);
     
    /* Write your code here */
-    
+    pCur->setPrev(newNode);
+    newNode->setPrev(pPre);
     
     // Update the counter
     length++;
@@ -78,14 +79,15 @@ bool LinkedList::deleteNode(string target)
         pCur = pCur->getNext();
     }
     
-    // If found, delte the node
+    // If found, delete the node
     if (pCur->getData().getCode() == target)
     {
         pPre = pCur->getPrev();
         pPre->setNext(pCur->getNext());
         
       /* Write your code here */
-        
+        pCur->getNext()->setPrev(pCur->getPrev());
+        pPre->setNext(pCur->getNext());
         delete pCur;
         deleted = true;
         length--;
@@ -126,11 +128,20 @@ void LinkedList::displayListForw() const
 // **************************************************
 void LinkedList::displayListBack() const
 {
-   /* Write your code here */
- 
+    /* Write your code here */
+    ListNode *pCur;
+    
+    pCur = head->getPrev(); //set pPre
+    
+    while (pCur != head)
+    {
+        pCur->getData().hDdisplay();
+        
+        pCur = pCur->getPrev();
+    }
+    
     cout << endl;
 }
-
 
 // **************************************************
 // The searchList function looks for a target college
@@ -146,11 +157,18 @@ bool LinkedList::searchList(string target, Park &dataOut) const
     pCur = head->getNext();
     // Find location: skip all nodes whose code is less than target
    /* Write your code here */
- 
- 
-    // If found, copy data to the output parameter, and change the flag to true
-   /* Write your code here */
- 
+    while (pCur != head) {
+        // If found, copy data to the output parameter, and change the flag to true
+        /* Write your code here */
+         if (pCur->getData().getCode() == target) { //if target is found
+             found = true; //update boolean to true
+             dataOut = pCur->getData(); //return object of the node
+             break; //Break after target is found so loop stops running
+         }
+         else {
+             pCur = pCur->getNext();
+         }
+    }
     return found;
 }
 

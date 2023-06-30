@@ -1,7 +1,7 @@
 // Specification file for the ListNode class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE: Xcode
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 #ifndef LISTNODE_H
 #define LISTNODE_H
@@ -22,17 +22,22 @@ public:
     // setters
     // set the forw pointer
     void setNext(ListNode* nextPtr) {forw = nextPtr;}
+    
      // set the back pointer
      /* Write your code here: setPrev() */
+    void setPrev(ListNode* backPtr) {back = backPtr;}
     
     // getters
     // return pointer in the next node
     ListNode *getNext() const {return forw;}
+    
    // return pointer in the previous node
    /* Write your code here: getPrev() */
+    ListNode *getPrev() const {return back;}
    
     // return data object in the listnode: getData()
     /* Write your code here */
+    Park getData() {return data;}
 };
 
 #endif

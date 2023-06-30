@@ -1,8 +1,7 @@
 // Specification file for the LinkedList class
-// Written By: A. Student
-// Reviewed by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed by: Daniel Wong
 // IDE: Xcode
-
 
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H

@@ -4,14 +4,14 @@
  Build and procees a sorted linked list of Park objects.
  The list is sorted in ascending order by the Park code, a unique identifier.
 
-// Written by: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 */
 
-// Written By: A. Student
-// Changed By:
+// Written By: Daniel Wong
+// Changed By: Daniel Wong
 // IDE: Xcode
 
 
@@ -80,7 +80,7 @@ void buildList(const string &filename, LinkedList &list)
     inputFile.close();
 }
 
-/* 
+/*
  Delete manager: delete items from the list until the user enters Q to quit
  deleting
  Input Parameter: list
@@ -99,7 +99,7 @@ void deleteManager(LinkedList &list)
         targetCode[0] = toupper(targetCode[0]);
         if(targetCode != "Q")
         {
-            if(/* Write your code here: call deleteNode() */)
+            if(list.deleteNode(targetCode))
                 cout << "    " << targetCode << " has been deleted!" << endl;
             else
                 cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
@@ -127,16 +127,16 @@ void searchManager(const LinkedList &list)
         targetCode[0] = toupper(targetCode[0]);
         if(targetCode != "Q")
         {
-            if(/* Write your code here: call searchList() */ )
+            if(list.searchList(targetCode, aPark))
                 aPark.vDisplay();
-            else     
+            else
                cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
         }
     }
     cout << "___________________END SEARCH SECTION _____" << endl;
 }
 
-/* 
+/*
 Display manager:
  - displays the number of national parks in this list
  - calls the displayListForw()/displayListBack() function upon request
@@ -146,13 +146,14 @@ void displayManager(const LinkedList &list)
 {
     string action;
     
-    cout << "Number of National Parks in this list: " << /* Write your code here: call getLength() */ endl;
+    cout << "Number of National Parks in this list: " << list.getLength() << endl;
     cout << "Display list [F/B/N]?" << endl;
     getline(cin, action);
     action[0] = toupper(action[0]);
     if (action == "F")
         /* Write your code here: to display the list from A to Z */
+        list.displayListForw();
     else if (action == "B")
         /* Write your code here: to display the list from Z to A  */
-
+        list.displayListBack();
 }

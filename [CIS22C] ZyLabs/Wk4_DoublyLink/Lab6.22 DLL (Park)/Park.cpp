@@ -1,6 +1,6 @@
 // Implementation file for the Park class
-// Written By: A. Student
-// Reviewed By:
+// Written By: Daniel Wong
+// Reviewed By: Daniel Wong
 // IDE: Xcode
 
 
@@ -60,6 +60,5 @@ void Park::vDisplay() const
     cout << description << endl;
     cout << state << endl;
     cout << year << endl;
-    
 }
 

@@ -1,6 +1,6 @@
 // Specification file for the Park class
-// Written By: A. Student
-// Reviewed by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed by: Daniel Wong
 // IDE: Xcode
 
 #ifndef PARK_H
@@ -48,7 +48,7 @@ class Park
     int getYear() const {return year;}
 
     //other functions
-    void hDdisplay()const; 
+    void hDdisplay()const;
     void vDisplay()const;
 };
 
