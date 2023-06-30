@@ -2,8 +2,8 @@
 CIS 22C
 Project: Stack of strings
 
-Written by:
-IDE:
+Written by: Daniel Wong
+IDE: ZyBooks
 *~*/
 #include <iostream>
 #include <string>
@@ -26,11 +26,11 @@ public:
    //~Stack_str();                           // Destructor
 
    // Stack operations
-   bool isEmpty() {/* Write your code here */ }
+   bool isEmpty() {return length == 0;}
    bool push(string);
    // string pop();
-   string peek() {/* Write your code here */ }
-   int getLength() {/* Write your code here */ }
+   string peek() {return top->value;}
+   int getLength() {return length;}
 };
 
 /**~*~*~*
@@ -57,10 +57,22 @@ bool Stack_str::push(string item)
 
 int main() {
 
-     Stack_str s;
-     string item;
+     Stack_str s; //Object
+     string item = " "; //Cin value
 
      /* Write your code here */
+     while (getline(cin, item) && item != "0") {
+        s.push(item); //push onto stack while val != 0
+     }
      
+     cout << s.getLength() << endl;
+     if (s.getLength() == 0) { //check if length of stack == 0
+        cout << "Empty Stack!" << endl;
+        cout << s.getLength() << endl; //getLength
+     }
+     else {
+       cout << s.peek() << endl;
+       cout << s.getLength() << endl;
+     }
      return 0;
 }
