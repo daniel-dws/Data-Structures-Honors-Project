@@ -1,7 +1,7 @@
 // Sorted Circular Doubly-Linked List with Sentinel Node
 // Specification file for the Student List class
 // Written by: A. Student
-// Reviewed by: <Write your name here>
+// Reviewed by: Daniel Wong
 // IDE:
 
 #ifndef STUDENTLIST_H

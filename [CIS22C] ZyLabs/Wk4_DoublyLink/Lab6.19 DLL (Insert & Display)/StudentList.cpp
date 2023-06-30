@@ -1,8 +1,8 @@
 // Sorted Circular Doubly-Linked List with Sentinel Node
 // Implementation file for the Student List class
 // Written by: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE:
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 #include <iostream>         // For cout  and NULL
 #include "StudentList.h"
 using namespace std;
@@ -23,6 +23,8 @@ StudentList::StudentList()
     head->stu.name = "";
     head->forw = head;
     /* Write your code here */
+    head->back = head;
+    
     count = 0;
 }
 
@@ -58,6 +60,16 @@ void StudentList::displayListForw() const
 void StudentList::displayListBack() const
 {
     /* Write your code here */
+    ListNode *pPre;
+    
+    pPre = head->back;
+    
+    while (pPre != head)
+    {
+        cout << pPre->stu.gpa << " " << pPre->stu.name << endl;
+        
+        pPre = pPre->back;
+    }
     
     cout << endl;
 }
@@ -89,6 +101,8 @@ void StudentList::insertNode(Student dataIn)
     newNode->forw = pCur;
     
      /* Write your code here */
+    pCur->back = newNode;
+    newNode->back = pPre;
     
     // Update the counter
     count++;

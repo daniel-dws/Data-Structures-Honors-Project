@@ -11,11 +11,11 @@
  Requirements: Finish writing the following three functions:
 - default constructor
 - insertNode()
-- displayListBack() 
+- displayListBack()
 
- Written by: A. Student
- Reviewed by: <Write your name here>
- IDE:
+ Written by: Daniel Wong
+ Reviewed by: Daniel Wong
+ IDE: ZyBooks
  
  */
 
@@ -49,6 +49,7 @@ int main()
     cout << endl;
     list.displayListForw();
     /* Write your code here: display the list from Z to A */
+    list.displayListBack();
     return 0;
 }
 
