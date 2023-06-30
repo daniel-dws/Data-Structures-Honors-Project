@@ -13,9 +13,9 @@ Your task is to finish writing the following three functions:
 - displayListBack()  (reuse code from your previous Lab)
 - deleteNode()
  
- Written by: A. Student
- Reviewed by: <Write your name here>
- IDE:
+ Written by: Daniel Wong
+ Reviewed by: Daniel Wong
+ IDE: xCode
  
 */
 
@@ -47,6 +47,7 @@ int main()
     cout << endl;
     list.displayListForw();
     /* Write your code here: display the list from Z to A */
+    list.displayListBack();
     return 0;
 }
 
