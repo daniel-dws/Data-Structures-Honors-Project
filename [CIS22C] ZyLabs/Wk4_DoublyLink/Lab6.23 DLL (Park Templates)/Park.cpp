@@ -1,7 +1,7 @@
 // Implementation file for the Park class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE: Xcode
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 #include <iostream>
 #include <iomanip>
@@ -64,6 +64,9 @@ void Park::vDisplay() const
 
 // overloaded operators
 /* Write your code here to define the following oveloaded operator:
-    - the stream insertion operator ( << )
- */
- 
+    - the stream insertion operator ( << ) */
+ostream &operator << (ostream &out, const Park &park) {
+    out << park.code << " " << park.state << " " << park.year << endl;
+    return out;
+}
+

@@ -1,7 +1,7 @@
 // Specification file for the Park class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE: Xcode
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 #ifndef PARK_H
 #define PARK_H
@@ -18,6 +18,8 @@
     // Do not write using namespace at the top level in a header file!
 
 using std::string;
+using std::ostream;
+using std::istream;
 /* Write code here */
 
 class Park
@@ -49,7 +51,7 @@ class Park
     int getYear() const {return year;}
 
     //other functions
-    void hDdisplay()const; 
+    void hDdisplay()const;
     void vDisplay()const;
     
     // overloaded operators
@@ -57,6 +59,12 @@ class Park
       - the stream insertion operator ( << )
       - the relational operators (<, >, == )
     */
+    
+    bool operator <  (const Park &right) {return code < right.code;}
+    bool operator >  (const Park &right) {return code > right.code;}
+    bool operator == (const Park &right) {return code == right.code;}
+    friend ostream &operator << (ostream &, const Park &);
+    
 };
 
 #endif

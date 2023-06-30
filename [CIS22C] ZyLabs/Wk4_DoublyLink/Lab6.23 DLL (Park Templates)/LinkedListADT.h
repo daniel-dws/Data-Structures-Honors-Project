@@ -1,6 +1,6 @@
 // Specification file for the LinkedList class
-// Written By: A. Student
-// Reviewed & Modified by: <Write your name here>
+// Written By: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
 // IDE: Xcode
 
 #ifndef LINKED_LIST_H
@@ -65,8 +65,8 @@ void LinkedList<T>::insertNode(const T &dataIn)
     pCur = head->getNext();
 
     // Find location: skip all nodes whose code is less than dataIn's code
-    // while (pCur != head && newNode->getData().getCode() > pCur->getData().getCode())
-    while (pCur != head && newNode->getData() > pCur->getData())
+    while (pCur != head && newNode->getData().getCode() > pCur->getData().getCode())
+    //while (pCur != head && newNode->getData() > pCur->getData())
     {
         pCur = pCur->getNext();
     }
@@ -91,11 +91,36 @@ void LinkedList<T>::insertNode(const T &dataIn)
 template <class T>
 bool LinkedList<T>::deleteNode(const T &target)
 {
-  /* Write your code here */
-  
+    ListNode<T> *pCur;       // To traverse the list
+    ListNode<T> *pPre;       // To point to the previous node
+    bool deleted = false;
+        
+    // Initialize pointers
+    pCur = head->getNext();
+    //pPre = head->getPrev();
+
+    // Find node containing the target: Skip all nodes whose gpa is less than the target
+    while (pCur != head && pCur->getData() < target)
+    {
+        pCur = pCur->getNext();
+    }
+        
+    // If found, delete the node
+    if (pCur != head && pCur->getData() == target)
+    {
+        pPre = pCur->getPrev();
+        pPre->setNext(pCur->getNext());
+            
+        /* Write your code here */
+        pCur->getNext()->setPrev(pCur->getPrev());
+       
+        //pPre->setNext(pCur->getPrev());
+        delete pCur;
+        deleted = true;
+        length--;
+    }
     return deleted;
 }
-
 
 // **************************************************
 // displayList shows the value
@@ -114,9 +139,9 @@ void LinkedList<T>::displayListForw() const
      while (pCur != head)
      {
          // Display the value in this node.
-         // pCur->getData().hDdisplay();
+         pCur->getData().hDdisplay();
          
-          std::cout << pCur->getData();
+          //std::cout << pCur->getData();
          
          // Move to the next node.
          pCur = pCur->getNext();
@@ -132,11 +157,24 @@ void LinkedList<T>::displayListForw() const
 template <class T>
 void LinkedList<T>::displayListBack() const
 {
-   /* Write your code here */
-   
+     ListNode<T> *pPre;  // To move through the list
+
+     // Position pCur: skip the head of the list.
+     pPre = head->getPrev();
+
+     // While pCur points to a node, traverse the list.
+     while (pPre != head)
+     {
+         // Display the value in this node.
+         pPre->getData().hDdisplay();
+         
+          //std::cout << pPre->getData();
+         
+         // Move to the next node.
+         pPre = pPre->getPrev();
+    }
     std::cout << std::endl;
 }
-
 
 // **************************************************
 // The searchList function looks for a target college
@@ -146,7 +184,23 @@ void LinkedList<T>::displayListBack() const
 template <class T>
 bool LinkedList<T>::searchList(const T &target, T &dataOut) const
 {
+    bool found = false; // assume target not found
+    ListNode<T> *pCur;         // To move through the list
+    
+    // Position pCur: skip the head of the list.
+    pCur = head->getNext();
+    // Find location: skip all nodes whose code is less than target
    /* Write your code here */
+    while (pCur != head && pCur->getData() < target) {
+        pCur = pCur->getNext();
+    }
+        // If found, copy data to the output parameter, and change the flag to true
+        /* Write your code here */
+    if (pCur->getData() == target) { //if target is found
+        found = true; //update boolean to true
+        dataOut = pCur->getData(); //return object of the node
+        //break; //Break after target is found so loop stops running
+    }
 
     return found;
 }

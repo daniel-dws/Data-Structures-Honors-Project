@@ -8,9 +8,9 @@
 
 */
 
-// Written by: A. Student
-// Reviewed & Modified by: <Write your name here>
-// IDE: Xcode
+// Written by: Daniel Wong
+// Reviewed & Modified by: Daniel Wong
+// IDE: xCode
 
 
 #include <iostream>
@@ -44,7 +44,7 @@ int main()
     return 0;
 }
 
-/* 
+/*
  This function reads data about national parks from a file and inserts them
  into a sorted linked list. The list is sorted in ascending order by code.
  */
@@ -81,7 +81,7 @@ void buildList(const string &filename, LinkedList<Park> &list)
     inputFile.close();
 }
 
-/* 
+/*
  Delete manager: delete items from the list until the user enters Q to quit
  deleting
  Input & Output Parameter: list
@@ -100,9 +100,9 @@ void deleteManager(LinkedList<Park> &list)
         targetCode[0] = toupper(targetCode[0]);
         if(targetCode != "Q")
         {
-            Park target;   
+            Park target;
             target.setCode(targetCode);
-            if(/* Write your code here: call deleteNode() */)
+            if(list.deleteNode(target))
                 cout << "    " << targetCode << " has been deleted!" << endl;
             else
                 cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
@@ -111,11 +111,11 @@ void deleteManager(LinkedList<Park> &list)
     cout << "___________________END DELETE SECTION_____" << endl;
 }
 
-/* 
+/*
  Search manager: search the list until the user enters Q to quit searching
  Input Parameter: list
  */
-void searchManager(const LinkedList &list)
+void searchManager(const LinkedList<Park> &list)
 {
     string targetCode = "";
     Park aPark;
@@ -132,16 +132,16 @@ void searchManager(const LinkedList &list)
         {
             Park target;
             target.setCode(targetCode);
-            if(/* Write your code here: call searchList() */ )
+            if(list.searchList(target, aPark))
                 aPark.vDisplay();
-            else     
+            else
                cout << "Park \"" << targetCode << "\" was not found in this list." << endl;
         }
     }
     cout << "___________________END SEARCH SECTION _____" << endl;
 }
 
-/* 
+/*
 Display manager:
  - displays the number of national parks in this list
  - calls the displayListForw()/displayListBack() function upon request
@@ -151,13 +151,15 @@ void displayManager(const LinkedList<Park> &list)
 {
     string action;
     
-    cout << "Number of National Parks in this list: " << /* Write your code here: call getLength() */ endl;
+    cout << "Number of National Parks in this list: " << list.getLength() << endl;
     cout << "Display list [F/B/N]?" << endl;
     getline(cin, action);
     action[0] = toupper(action[0]);
     if (action == "F")
         /* Write your code here: to display the list from A to Z */
+        list.displayListForw();
     else if (action == "B")
         /* Write your code here: to display the list from Z to A  */
+        list.displayListBack();
 
 }
