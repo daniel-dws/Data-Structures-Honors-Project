@@ -4,9 +4,9 @@
  This program builds and displays a sorted list
  The list is sorted in ascending order by name
  
- Written by: A. Student
- Reviewed & Modified by: <Write your name here>
- IDE: 
+ Written by: Daniel Wong
+ Reviewed & Modified by: Daniel Wong
+ IDE: ZyBooks
  
  */
 #include <iostream>
@@ -62,23 +62,23 @@ void buildList(StudentList &list)
 }
 
 // ***************************************************
-// This function is a test driver for the 
+// This function is a test driver for the
 // linked list delete function
 // ***************************************************
 void deleteTestDriver(StudentList &list)
 {
-    string toDelete; 
+    string toDelete;
     
     cout << "Enter strings to be deleted (# to stop)" << endl;
-    cin >> toDelete;       
+    cin >> toDelete;
     while (toDelete != "#")
     {
         cout << "   " << toDelete;
-        if (/* Write your code here */ ) // call deleteNode() 
+        if (list.deleteNode(toDelete)) // call deleteNode()
             cout << " - deleted\n";
         else
             cout << " - not found\n";
-        cin >> toDelete;         
+        cin >> toDelete;
     }
     cout << endl;
 }

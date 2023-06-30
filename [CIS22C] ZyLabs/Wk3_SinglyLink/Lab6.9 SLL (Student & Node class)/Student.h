@@ -1,7 +1,7 @@
 // Specification file for the Student class
-// Written by: A. Student
-// Reviewed by: <Write your name here>
-// IDE:
+// Written by: Daniel Wong
+// Reviewed by: Daniel Wong
+// IDE: ZyBooks
 
 #ifndef STUDENT_H
 #define STUDENT_H
@@ -28,6 +28,6 @@ public:
     void setName(string n) {name = n;}
     void setGpa(double g) {gpa = g;}
     string getName() const {return name;}
-    double getGpa() const {return gpa;} 
+    double getGpa() const {return gpa;}
 };
 #endif

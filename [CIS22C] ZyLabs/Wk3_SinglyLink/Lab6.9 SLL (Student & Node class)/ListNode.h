@@ -1,7 +1,7 @@
 // Specification file for the ListNode class
-// Written by: A. Student
-// Reviewed by: <Write your name here>
-// IDE
+// Written by: Daniel Wong
+// Reviewed by: Daniel Wong
+// IDE: ZyBooks
 
 #ifndef LISTNODE_H
 #define LISTNODE_H
